@@ -1,0 +1,18 @@
+{{ define "main" }}
+      <div class="row">
+        <table class="u-full-width">
+          <thead>
+            <tr>
+              <th>Package</th>
+              <th>Source</th>
+              <th>Documentation</th>
+              </tr>
+          </thead>
+          <tbody>
+            {{- range .Pages.ByTitle -}} <!-- Ranges through content/*.md -->
+            {{- partial "package.html" . -}}
+            {{- end }}
+          </tbody>
+        </table>
+      </div>
+{{ end }}

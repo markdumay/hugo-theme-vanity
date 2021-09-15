@@ -1,0 +1,12 @@
+{{- $pkg := urls.Parse (.Title | absURL) -}}
+{{- $pkgURL := printf "%s%s" $pkg.Host $pkg.RequestURI -}}
+{{- $repo := urls.Parse .Page.Params.Repository -}}
+{{- $repoURL := printf "%s%s" $repo.Host $repo.RequestURI -}}
+<!DOCTYPE html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="go-import" content="{{ $pkgURL }} git {{ $repoURL }}">
+  <meta name="go-source" content="{{ $pkgURL }} {{ $repoURL }} {{ $repoURL }}/tree/master{/dir} {{ $repoURL }}/blob/master{/dir}/{file}#L{line}">
+  <!-- <meta http-equiv="refresh" content="0; url={{ $repoURL }}"> -->
+</head>
+</html>

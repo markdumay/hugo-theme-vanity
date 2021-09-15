@@ -1,2 +1,2 @@
 # hugo-theme-vanity
-Hugo theme to create vanity URLs for Go packages
+A lightweight and responsive Hugo theme to create vanity URLs for Go packages

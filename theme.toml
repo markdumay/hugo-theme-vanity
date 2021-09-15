@@ -1,0 +1,12 @@
+name = "go-vanity"
+license = "MIT"
+licenselink = "https://github.com/markdumay/hugo-theme-vanity/blob/master/LICENSE"
+description = "A lightweight and responsive Hugo theme to create vanity URLs for Go packages"
+homepage = "https://github.com/markdumay/hugo-theme-vanity/"
+tags = ["minimalist", "responsive", "light"]
+features = ["minimalist", "responsive", "vanity", "golang"]
+min_version = "0.41.0"
+
+[author]
+  name = "Mark Dumay"
+  homepage = "https://github.com/markdumay/"
