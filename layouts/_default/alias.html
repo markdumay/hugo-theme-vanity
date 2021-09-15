@@ -1,7 +1,7 @@
 {{- $pkg := urls.Parse (.Title | absURL) -}}
-{{- $pkgURL := printf "%s%s" $pkg.Host $pkg.RequestURI -}}
+{{- $pkgURL := printf "https://%s%s" $pkg.Host $pkg.RequestURI -}}
 {{- $repo := urls.Parse .Page.Params.Repository -}}
-{{- $repoURL := printf "%s%s" $repo.Host $repo.RequestURI -}}
+{{- $repoURL := printf "https://%s%s" $repo.Host $repo.RequestURI -}}
 <!DOCTYPE html>
 <html>
   <head>
