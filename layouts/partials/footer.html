@@ -1,1 +1,6 @@
-{{ if .Site.Params.Author }}<div class="footer">Copyright &copy; {{ now.Format "2006"}} {{ .Site.Params.Author }}</div>{{end}}
+<div class="footer">
+    <small>
+        {{ if .Site.Params.Author }}Copyright &copy; {{ now.Format "2006"}} {{ .Site.Params.Author }} | {{ end }}
+        The <a href="https://golang.org/doc/gopher/">Go Gopher</a> by Renée French is licensed under <a href="https://creativecommons.org/licenses/by/3.0/">CC BY 3.0</a>
+    </small>
+</div>
