@@ -1,12 +1,24 @@
-{{- $pkg := urls.Parse (.Title | absURL) -}}
-{{- $pkgURL := printf "https://%s%s" $pkg.Host $pkg.RequestURI -}}
-{{- $repo := urls.Parse .Page.Params.Repository -}}
-{{- $repoURL := printf "https://%s%s" $repo.Host $repo.RequestURI -}}
-<!DOCTYPE html>
-<head>
-  <meta http-equiv="content-type" content="text/html; charset=utf-8">
-  <meta name="go-import" content="{{ $pkgURL }} git {{ $repoURL }}">
-  <meta name="go-source" content="{{ $pkgURL }} {{ $repoURL }} {{ $repoURL }}/tree/master{/dir} {{ $repoURL }}/blob/master{/dir}/{file}#L{line}">
-  <meta http-equiv="refresh" content="0; url={{ $repoURL }}">
-</head>
-</html>
+{{ define "head" }}
+<meta name="go-import" content="{{ partial "pkg.html" . }} git {{ partial "repo.html" . }}">
+<meta name="go-source" content="{{ partial "pkg.html" . }} {{ partial "repo.html" . }} {{ partial "repo.html" . }}/tree/master{/dir} {{ partial "repo.html" . }}/blob/master{/dir}/{file}#L{line}">
+{{ if .Page.Params.Redirect }}<meta http-equiv="refresh" content="0; url={{ partial "repo.html" . }}">{{ end }}
+{{ end }}
+
+{{ define "main" }}
+{{ if not .Page.Params.Redirect }}
+  <h4>Redirect disabled</h4>
+  <pre><code class="language-html">
+    &lt;meta name="go-import" content="{{ partial "pkg.html" . }} git {{ partial "repo.html" . }}"&gt;<br />
+  </code></pre>
+
+  <pre><code class="language-html">
+    &lt;meta name="go-source" content="{{ partial "pkg.html" . }} {{ partial "repo.html" . }}
+    {{ partial "repo.html" . }}/tree/master{/dir}
+    {{ partial "repo.html" . }}/blob/master{/dir}/{file}#L{line}"&gt;
+  </code></pre>
+
+  <pre><code class="language-html">
+    &lt;meta http-equiv="refresh" content="0; url={{ partial "repo.html" . }}"&gt;<br />
+  </code></pre>
+  {{ end }}
+{{ end }}

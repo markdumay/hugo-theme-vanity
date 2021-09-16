@@ -1,0 +1,8 @@
+{{- $pkg := urls.Parse (.Permalink) }}
+{{- $pkgURL := printf "%s%s" $pkg.Host $pkg.RequestURI }}
+{{- $docURL := printf "pkg.go.dev/%s" $pkgURL }}
+{{ if .Page.Params.GoDoc }}
+{{- $doc := urls.Parse .Page.Params.GoDoc }}
+{{- $docURL = printf "%s%s" $doc.Host $doc.RequestURI }}
+{{- end }}
+{{ return $docURL }}

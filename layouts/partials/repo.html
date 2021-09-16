@@ -1,0 +1,3 @@
+{{- $repo := urls.Parse .Page.Params.Repository }}
+{{- $repoURL := printf "%s%s" $repo.Host $repo.RequestURI }}
+{{ return $repoURL }}

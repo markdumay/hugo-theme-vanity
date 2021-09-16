@@ -4,4 +4,5 @@ date: {{ .Date }}
 draft: true
 repository:
 godoc:
+tags: [package]
 ---
