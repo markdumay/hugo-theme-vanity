@@ -74,7 +74,7 @@ theme = "go-vanity"
     redirect = true
 ```
 
-Each package you wish to configure should have its own content file. This file requires two additional variables in the frontmatter: `repository` and `godoc`. The `https://` prefix for these URLs is added  automatically by the `go-vanity` theme. The configuration of `example.com/package` should be defined in `content/package.md`.
+Each package you wish to configure should have its own content file. This file requires two additional variables in the frontmatter: `repository` and `godoc`. The `https://` prefix for these URLs is added  automatically by the `go-vanity` theme. The configuration of `example.com/package` should be defined in `content/package.md`. Lastly, the file should include the tag `package` for the package to be rendered on the landing page.
 
 ```yaml
 ---
@@ -83,6 +83,7 @@ date: 2021-09-14T13:20:55+02:00
 draft: false
 repository: github.com/owner/repo
 godoc: pkg.go.dev/example.com/package
+tags: [package]
 ---
 ```
 
