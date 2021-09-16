@@ -1,0 +1,19 @@
+{{ define "main" }}
+      <div class="row u-full-height">
+        <table class="u-full-width">
+          <thead>
+            <tr>
+              <th>Package</th>
+              <th>Source</th>
+              <th>Documentation</th>
+              </tr>
+          </thead>
+          <tbody>
+            {{ $p := slice "package" }}
+            {{- range where .Site.Pages.ByTitle "Params.tags" "intersect" $p -}}
+            {{- partial "package.html" . -}}
+            {{- end }}
+          </tbody>
+        </table>
+      </div>
+{{ end }}

@@ -1,17 +1,8 @@
-{{- $pkg := urls.Parse (.Title | absURL) }}
-{{- $pkgURL := printf "%s%s" $pkg.Host $pkg.RequestURI }}
-{{- $repo := urls.Parse .Page.Params.Repository }}
-{{- $repoURL := printf "%s%s" $repo.Host $repo.RequestURI }}
-{{- $docURL := printf "pkg.go.dev/%s" $pkgURL }}
-{{ if .Page.Params.GoDoc }}
-{{- $doc := urls.Parse .Page.Params.GoDoc }}
-{{- $docURL = printf "%s%s" $doc.Host $doc.RequestURI }}
-{{- end}}
             <tr>
-              <td>{{ $pkgURL }}</td>
-              <td><a href="https://{{ $repoURL }}">{{ $repoURL }}</a></td>
+              <td>{{ partial "pkg.html" . }}</td>
+              <td><a href="https://{{ partial "repo.html" . }}">{{ partial "repo.html" . }}</a></td>
               <td>
-                <a href="https://{{ $docURL }}">
+                <a href="https://{{ partial "doc.html" . }}">
                   <img src="https://img.shields.io/badge/godoc-reference-blue?style=for-the-badge" alt="GoDoc" />
                 </a>
               </td>
