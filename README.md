@@ -36,7 +36,7 @@
 
 
 ## About
-<!-- TODO: Add screenshot -->
+![./images/screenshot.png](https://raw.githubusercontent.com/markdumay/hugo-theme-vanity/main/images/screenshot.png)
 
 Go uses URLs such as `github.com/uber-go/atomic` to import packages. This import statement links directly to the repository hosted on `github.com`. Go supports [vanity import paths][golang_remote_path] to decouple the import path and the code repository. For example, the `atomic` package is made available at `go.uber.org/atomic`, which redirects to GitHub under the hood.
 
