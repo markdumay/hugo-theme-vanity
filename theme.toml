@@ -12,5 +12,4 @@ min_version = "0.41.0"
   homepage = "https://github.com/markdumay/"
 
 [params]
-    author = "Author name"
     redirect = true
