@@ -1,0 +1,17 @@
+# dotenv environment variables file
+.env
+
+# gren configuration
+.grenrc.yml
+
+# Local filesystem files
+.DS_Store
+
+# Visual Studio Code
+.vscode
+
+# Generated Hugo content
+/public
+
+# Hugo themes data
+/themes
