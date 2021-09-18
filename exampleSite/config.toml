@@ -1,0 +1,13 @@
+baseURL = "http://go-vanity-demo.markdumay.org/"
+languageCode = "en-us"
+title = "go-vanity-demo.markdumay.org"
+theme = "go-vanity"
+author = "Mark Dumay"
+copyright = "Copyright © 2021 Mark Dumay; all rights reserved."
+paginate = 8
+
+# !!! exampleSite only, you may need to delete the line: `themesDir: ../../` 
+themesDir: ../../
+
+[params]
+    redirect = false
