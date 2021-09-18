@@ -62,15 +62,15 @@ git submodule add https://github.com/markdumay/hugo-theme-vanity.git themes/go-v
 ```
 
 ## Configuration
-Once installed, apply the `go-vanity` theme to your main Hugo site in its `config.toml`. The `baseURL` is used as the base path for your vanity URL. Please be aware that Hugo changes this to `localhost:1313` when running locally. The theme uses two parameters: `author` and `redirect`. If set, the author's name is added as copyright owner in the landing page's footer. When `redirect` is set to `false`, individual package URLs will not redirect automatically. This allows you to test the settings and to inspect the generated HTML code.
+Once installed, apply the `go-vanity` theme to your main Hugo site in its `config.toml`. The `baseURL` is used as the base path for your vanity URL. Please be aware that Hugo changes this to `localhost:1313` when running locally. Run `hugo server -b http://example.com` to change this behavior. The theme uses one parameter: `redirect`. When `redirect` is set to `false`, individual package URLs will not redirect automatically. This allows you to test the settings and to inspect the generated HTML code. Additionally, a copyright notice is added to the landing page's footer when specified.
 
 ```toml
 baseURL = "http://example.com/"
 languageCode = "en-us"
 title = "example.go"
 theme = "go-vanity"
+copyright = "Copyright © 2021 Author Name; all rights reserved."
 [params]
-    author = "Author name"
     redirect = true
 ```
 
