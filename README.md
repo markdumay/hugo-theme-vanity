@@ -36,7 +36,7 @@
 
 
 ## About
-<!-- TODO: Add screenshot -->
+![./images/screenshot.png](https://raw.githubusercontent.com/markdumay/hugo-theme-vanity/main/images/screenshot.png)
 
 Go uses URLs such as `github.com/uber-go/atomic` to import packages. This import statement links directly to the repository hosted on `github.com`. Go supports [vanity import paths][golang_remote_path] to decouple the import path and the code repository. For example, the `atomic` package is made available at `go.uber.org/atomic`, which redirects to GitHub under the hood.
 
@@ -62,7 +62,9 @@ git submodule add https://github.com/markdumay/hugo-theme-vanity.git themes/go-v
 ```
 
 ## Configuration
-Once installed, apply the `go-vanity` theme to your main Hugo site in its `config.toml`. The `baseURL` is used as the base path for your vanity URL. Please be aware that Hugo changes this to `localhost:1313` when running locally. Run `hugo server -b http://example.com` to change this behavior. The theme uses one parameter: `redirect`. When `redirect` is set to `false`, individual package URLs will not redirect automatically. This allows you to test the settings and to inspect the generated HTML code. Additionally, a copyright notice is added to the landing page's footer when specified.
+Once installed, apply the `go-vanity` theme to your main Hugo site in its `config.toml`. The `baseURL` is used as the base path for your vanity URL. The landing page will display a default paginator if `paginate` is set in the main configuration. Additionally, a copyright notice is added to the landing page's footer when specified.
+
+The theme uses one parameter: `redirect`. When `redirect` is set to `false`, individual package URLs will not redirect automatically. This allows you to test the settings and to inspect the generated HTML code. 
 
 ```toml
 baseURL = "http://example.com/"
@@ -70,6 +72,7 @@ languageCode = "en-us"
 title = "example.go"
 theme = "go-vanity"
 copyright = "Copyright © 2021 Author Name; all rights reserved."
+paginate = 5
 [params]
     redirect = true
 ```
@@ -88,8 +91,11 @@ tags: [package]
 ```
 
 ## Usage
-Once configured, run or deploy your Hugo site as usual. When running locally, the landing page is available at `localhost:1313`. The URL `localhost:1313/package` will redirect to `github.com/owner/repo`. When deployed in production, the URLs will change to `example.com` and `example.com/package` respectively. As mentioned in the previous section, setting `redirect` to `false` in the `config.toml` allows you to inspect the generated code for each package.
+Once configured, run or deploy your Hugo site as usual. When running locally, the landing page is available at `localhost:1313`. The URL `localhost:1313/package` will redirect to `github.com/owner/repo`. When deployed in production, the URLs will change to `example.com` and `example.com/package` respectively.
 
+> When running locally, `hugo server -b http://example.com` replaces `localhost:1313` with `example.com`. This allows you to visually verify the rendering of the pages. This may lead to server binding errors though.
+
+As mentioned in the previous section, setting `redirect` to `false` in the `config.toml` allows you to inspect the generated code for each package.
 
 ## Contributing
 1. Clone the repository and create a new branch 
