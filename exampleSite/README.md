@@ -9,7 +9,7 @@ This repository offers an example site for the Hugo Theme [go-vanity](https://gi
 
     ```console
     $ git clone https://github.com/markdumay/hugo-theme-vanity
-    $ cd exampleSite
+    $ cd hugo-theme-vanity/exampleSite
     ```
 3. Run Hugo server.
 
