@@ -6,7 +6,7 @@ author = "Mark Dumay"
 copyright = "Copyright © 2021 Mark Dumay; all rights reserved."
 paginate = 8
 
-# !!! exampleSite only, you may need to delete the line: `themesDir: ../../` 
+# !!! exampleSite only, you may need to delete the line: `themesDir = "../../"`
 themesDir = "../../"
 
 [params]
