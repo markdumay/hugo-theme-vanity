@@ -1,4 +1,4 @@
-baseURL = "http://go-vanity-demo.markdumay.org/"
+baseURL = "https://go-vanity-demo.markdumay.org/"
 languageCode = "en-us"
 title = "go-vanity-demo.markdumay.org"
 theme = "hugo-theme-vanity"
