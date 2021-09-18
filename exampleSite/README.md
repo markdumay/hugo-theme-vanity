@@ -18,7 +18,7 @@ This repository offers an example site for the Hugo Theme [go-vanity](https://gi
     ```
 
 > **Notes**
-> - The exampleSite uses the theme `go-vanity` by setting `themesDir` as `../../`. Adjust this as needed.
+> - The exampleSite uses the theme `hugo-theme-vanity` by setting `themesDir` as `../../`. Adjust this as needed.
 > - The exampleSite uses a submodule linking to the parent directory to enable Netlify automated builds. You can ignore this when running the example locally.
 
 <!-- MARKDOWN PUBLIC LINKS -->
