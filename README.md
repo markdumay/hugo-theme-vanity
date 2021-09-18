@@ -1,4 +1,4 @@
-# hugo-theme-vanity
+# Hugo Theme Go-Vanity
 
 <!-- Tagline -->
 <p align="center">
@@ -58,7 +58,7 @@ The following prerequisites need to be met in order to use the `go-vanity` theme
 The `go-vanity` theme can be installed as a regular Hugo theme. Run the following command from within the main directory of your Hugo site.
 
 ```console
-git submodule add https://github.com/markdumay/hugo-theme-vanity.git themes/go-vanity
+$ git submodule add https://github.com/markdumay/hugo-theme-vanity.git themes/go-vanity
 ```
 
 ## Configuration
