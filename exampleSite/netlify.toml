@@ -1,4 +1,4 @@
 [build]
   base = "exampleSite/"
   publish = "public/"
-  command = "mkdir themes && rsync -Rr .. themes/hugo-theme-vanity && hugo"
+  command = "mkdir -p themes && rsync -Rr .. themes/hugo-theme-vanity && hugo"
