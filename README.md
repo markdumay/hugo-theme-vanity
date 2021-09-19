@@ -9,6 +9,9 @@
 
 <!-- Badges -->
 <p align="center">
+    <a href="https://app.netlify.com/sites/go-vanity-demo/deploys" alt="Netlify Status">
+        <img src="https://img.shields.io/netlify/1c25f6cc-a07e-4437-8fce-fe24a3302130" />
+    </a>
     <a href="https://github.com/markdumay/hugo-theme-vanity/commits/main" alt="Last commit">
         <img src="https://img.shields.io/github/last-commit/markdumay/hugo-theme-vanity.svg" />
     </a>
@@ -58,14 +61,42 @@ The following prerequisites need to be met in order to use the `go-vanity` theme
 
 
 ## Installation
-The `go-vanity` theme can be installed as a regular Hugo theme. Run the following command from within the main directory of your Hugo site.
+The `go-vanity` theme can be installed as a regular Hugo theme, either as Hugo module or as Git submodule. 
+
+<details>
+<summary>Hugo Module</summary>
+
+> Hugo Modules require Go version 1.14 or later to be installed on your system. [Download and install][golang_download] Go as needed. 
+
+From your project's root directory, initiate the hugo module system if needed:
+```console
+$ hugo mod init github.com/<your_user>/<your_project>
+```
+
+Add the theme's repository to your `config.toml`:
+```toml
+theme = ["github.com/markdumay/hugo-theme-vanity"]
+```
+</details>
+
+<details>
+<summary>Git Submodule</summary>
+
+Run the following command from within your project's root directory.
 
 ```console
 $ git submodule add https://github.com/markdumay/hugo-theme-vanity.git themes/go-vanity
 ```
 
+Add the theme to your `config.toml`:
+```toml
+theme = "go-vanity"
+```
+</details>
+
+
 ## Configuration
-Once installed, apply the `go-vanity` theme to your main Hugo site in its `config.toml`. The `baseURL` is used as the base path for your vanity URL. The landing page will display a default paginator if `paginate` is set in the main configuration. Additionally, a copyright notice is added to the landing page's footer when specified.
+Further refine the `config.toml` once the theme has been installed. The `baseURL` is used as the base path for your vanity URL. The landing page will display a default paginator if `paginate` is set in the main configuration. Additionally, a copyright notice is added to the landing page's footer when specified.
 
 The theme uses one parameter: `redirect`. When `redirect` is set to `false`, individual package URLs will not redirect automatically. This allows you to test the settings and to inspect the generated HTML code. 
 
@@ -73,14 +104,17 @@ The theme uses one parameter: `redirect`. When `redirect` is set to `false`, ind
 baseURL = "http://example.com/"
 languageCode = "en-us"
 title = "example.go"
-theme = "go-vanity"
+# uncomment the next line when using Hugo Modules:
+# theme = ["github.com/markdumay/hugo-theme-vanity"]
+# uncomment the next line when using Git Submodules:
+# theme = "go-vanity"
 copyright = "Copyright © 2021 Author Name; all rights reserved."
 paginate = 5
 [params]
     redirect = true
 ```
 
-Each package you wish to configure should have its own content file. This file requires two additional variables in the frontmatter: `repository` and `godoc`. The `https://` prefix for these URLs is added  automatically by the `go-vanity` theme. The configuration of `example.com/package` should be defined in `content/package.md`. Lastly, the file should include the tag `package` for the package to be rendered on the landing page.
+Each package should have its own content file. This file requires two additional variables in the frontmatter: `repository` and `godoc`. The `https://` prefix for these URLs is added  automatically by the `go-vanity` theme. The configuration of `example.com/package` should be defined in `content/package.md`. Lastly, the file should include the tag `package` for the package to be rendered on the landing page.
 
 ```yaml
 ---
@@ -128,6 +162,7 @@ The `hugo-theme-vanity` codebase is released under the [MIT license][license]. T
 [hugo_quickstart]: https://gohugo.io/getting-started/quick-start/
 [nate_finch_vanity_url]: https://npf.io/2016/10/vanity-imports-with-hugo/
 [mark_sagi_kazar_url]: https://sagikazarmark.hu/blog/vanity-import-paths-in-go/
+[golang_download]: https://golang.org/dl/
 [golang_remote_path]: https://golang.org/cmd/go/#hdr-Remote_import_paths
 [uber_go_url]: http://go.uber.org
 
