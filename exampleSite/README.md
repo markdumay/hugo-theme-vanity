@@ -1,5 +1,7 @@
 # Hugo Theme go-vanity - Example Site
 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/1c25f6cc-a07e-4437-8fce-fe24a3302130/deploy-status)](https://app.netlify.com/sites/go-vanity-demo/deploys)
+
 This repository offers an example site for the Hugo Theme [go-vanity](https://github.com/markdumay/hugo-theme-vanity). The example is also available as an [online demo][demo] hosted by [Netlify][netlify_url].
 
 ## Usage
