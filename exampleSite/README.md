@@ -17,7 +17,7 @@ This repository offers an example site for the Hugo Theme [go-vanity](https://gi
     $ hugo server
     ```
 
-> **Note** The exampleSite uses the theme `hugo-theme-vanity` by setting `themesDir` as `../../`. Adjust this as needed.
+> **Note** - The exampleSite uses the theme `hugo-theme-vanity` by setting `themesDir` as `../../`. Adjust this as needed.
 
 <!-- MARKDOWN PUBLIC LINKS -->
 [hugo_quickstart]: https://gohugo.io/getting-started/quick-start/
