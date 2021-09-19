@@ -1,4 +1,4 @@
 [build]
   base = "exampleSite/"
   publish = "public/"
-  command = "git submodule add https://github.com/markdumay/hugo-theme-vanity.git themes/hugo-theme-vanity && git submodule init && git submodule update && hugo"
+  command = "mkdir -p themes && cp -r .. themes/hugo-theme-vanity && hugo"
