@@ -1,4 +1,4 @@
 [build]
   base = "exampleSite/"
   publish = "public/"
-  command = "cp -r /opt/build/repo /opt/build/hugo-theme-vanity && ls -la /opt/build/hugo-theme-vanity && hugo"
+  command = "cp -r /opt/build/repo /opt/build/hugo-theme-vanity && hugo"
