@@ -38,6 +38,9 @@
 ## About
 ![./images/screenshot.png](https://raw.githubusercontent.com/markdumay/hugo-theme-vanity/main/images/screenshot.png)
 
+- [Online Demo][demo]
+- [Example Site Source][example_site]
+
 Go uses URLs such as `github.com/uber-go/atomic` to import packages. This import statement links directly to the repository hosted on `github.com`. Go supports [vanity import paths][golang_remote_path] to decouple the import path and the code repository. For example, the `atomic` package is made available at `go.uber.org/atomic`, which redirects to GitHub under the hood.
 
 Inspired by the [Uber Go][uber_go_url] landing page, this repository simplifies the creation and maintenance of a website to list and resolve the packages using a vanity base url (e.g. `example.com`). The repository is implemented as a theme called `go-vanity` for [Hugo][hugo_url]. The generated static site can be deployed on any capable host. The next sections describe the prerequisites, installation, and configuration of a vanity site.
@@ -135,3 +138,5 @@ The `hugo-theme-vanity` codebase is released under the [MIT license][license]. T
 [blog]: https://github.com/markdumay
 [license]: https://github.com/markdumay/hugo-theme-vanity/blob/main/LICENSE
 [repository]: https://github.com/markdumay/hugo-theme-vanity.git
+[demo]: https://go-vanity-demo.markdumay.org/
+[example_site]: https://github.com/markdumay/hugo-theme-vanity/tree/master/exampleSite
