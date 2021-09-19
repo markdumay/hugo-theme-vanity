@@ -1,6 +1,6 @@
 {{ define "head" }}
 <meta name="go-import" content="{{ partial "pkg.html" . }} git {{ partial "repo.html" . }}">
-<meta name="go-source" content="{{ partial "pkg.html" . }} {{ partial "repo.html" . }} {{ partial "repo.html" . }}/tree/master{/dir} {{ partial "repo.html" . }}/blob/master{/dir}/{file}#L{line}">
+<meta name="go-source" content="{{ partial "pkg.html" . }} {{ partial "repo.html" . }} {{ partial "repo.html" . }}/tree/main{/dir} {{ partial "repo.html" . }}/blob/main{/dir}/{file}#L{line}">
 {{ if .Page.Params.Redirect }}<meta http-equiv="refresh" content="0; url={{ partial "repo.html" . }}">{{ end }}
 {{ end }}
 
@@ -13,8 +13,8 @@
 
   <pre><code class="language-html">
     &lt;meta name="go-source" content="{{ partial "pkg.html" . }} {{ partial "repo.html" . }}
-    {{ partial "repo.html" . }}/tree/master{/dir}
-    {{ partial "repo.html" . }}/blob/master{/dir}/{file}#L{line}"&gt;
+    {{ partial "repo.html" . }}/tree/main{/dir}
+    {{ partial "repo.html" . }}/blob/main{/dir}/{file}#L{line}"&gt;
   </code></pre>
 
   <pre><code class="language-html">
