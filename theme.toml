@@ -1,4 +1,4 @@
-name = "hugo-theme-vanity"
+name = "go-vanity"
 license = "MIT"
 licenselink = "https://github.com/markdumay/hugo-theme-vanity/blob/master/LICENSE"
 description = "A lightweight and responsive Hugo theme to create vanity URLs for Go packages"
