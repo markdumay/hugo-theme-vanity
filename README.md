@@ -139,4 +139,4 @@ The `hugo-theme-vanity` codebase is released under the [MIT license][license]. T
 [license]: https://github.com/markdumay/hugo-theme-vanity/blob/main/LICENSE
 [repository]: https://github.com/markdumay/hugo-theme-vanity.git
 [demo]: https://go-vanity-demo.markdumay.org/
-[example_site]: https://github.com/markdumay/hugo-theme-vanity/tree/master/exampleSite
+[example_site]: https://github.com/markdumay/hugo-theme-vanity/tree/main/exampleSite
