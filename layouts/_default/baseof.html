@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html>
-  {{ partial "head.html" . }}
+  <head>
+    {{ partial "head.html" . }}
+    {{ block "redirect" . }}{{ end }}
+  </head>
   <body>
     <div id="content" class="container">
       {{ block "main" . }}{{ end }}
