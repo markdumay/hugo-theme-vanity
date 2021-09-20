@@ -1,11 +1,13 @@
 {{ define "head" }}
 <meta name="go-import" content="{{ partial "pkg.html" . }} git {{ partial "repo.html" . }}">
 <meta name="go-source" content="{{ partial "pkg.html" . }} {{ partial "repo.html" . }} {{ partial "repo.html" . }}/tree/main{/dir} {{ partial "repo.html" . }}/blob/main{/dir}/{file}#L{line}">
-{{ if .Page.Params.Redirect }}<meta http-equiv="refresh" content="0; url={{ partial "repo.html" . }}">{{ end }}
+{{ if .Site.Params.Redirect }}<meta http-equiv="refresh" content="0; url={{ partial "repo.html" . }}">{{ end }}
 {{ end }}
 
 {{ define "main" }}
-{{ if not .Page.Params.Redirect }}
+{{ if .Site.Params.Redirect }}
+<h4>Redirecting...</h4>
+{{ else }}
   <h4>Redirect disabled</h4>
   <pre><code class="language-html">
     &lt;meta name="go-import" content="{{ partial "pkg.html" . }} git {{ partial "repo.html" . }}"&gt;<br />
