@@ -1,7 +1,7 @@
-{{ define "head" }}
-<meta name="go-import" content="{{ partial "pkg.html" . }} git {{ partial "repo.html" . }}">
-<meta name="go-source" content="{{ partial "pkg.html" . }} {{ partial "repo.html" . }} {{ partial "repo.html" . }}/tree/main{/dir} {{ partial "repo.html" . }}/blob/main{/dir}/{file}#L{line}">
-{{ if .Site.Params.Redirect }}<meta http-equiv="refresh" content="0; url={{ partial "repo.html" . }}">{{ end }}
+{{ define "redirect" }}
+<meta name="go-import" content="{{ partial "pkg.html" . }} git https://{{ partial "repo.html" . }}">
+<meta name="go-source" content="{{ partial "pkg.html" . }} https://{{ partial "repo.html" . }} https://{{ partial "repo.html" . }}/tree/main{/dir} https://{{ partial "repo.html" . }}/blob/main{/dir}/{file}#L{line}">
+{{ if .Site.Params.Redirect }}<meta http-equiv="refresh" content="0; url=https://{{ partial "repo.html" . }}">{{ end }}
 {{ end }}
 
 {{ define "main" }}
@@ -10,17 +10,17 @@
 {{ else }}
   <h4>Redirect disabled</h4>
   <pre><code class="language-html">
-    &lt;meta name="go-import" content="{{ partial "pkg.html" . }} git {{ partial "repo.html" . }}"&gt;<br />
+    &lt;meta name="go-import" content="{{ partial "pkg.html" . }} git https://{{ partial "repo.html" . }}"&gt;<br />
   </code></pre>
 
   <pre><code class="language-html">
-    &lt;meta name="go-source" content="{{ partial "pkg.html" . }} {{ partial "repo.html" . }}
-    {{ partial "repo.html" . }}/tree/main{/dir}
-    {{ partial "repo.html" . }}/blob/main{/dir}/{file}#L{line}"&gt;
+    &lt;meta name="go-source" content="{{ partial "pkg.html" . }} https://{{ partial "repo.html" . }}
+    https://{{ partial "repo.html" . }}/tree/main{/dir}
+    https://{{ partial "repo.html" . }}/blob/main{/dir}/{file}#L{line}"&gt;
   </code></pre>
 
   <pre><code class="language-html">
-    &lt;meta http-equiv="refresh" content="0; url={{ partial "repo.html" . }}"&gt;<br />
+    &lt;meta http-equiv="refresh" content="0; url=https://{{ partial "repo.html" . }}"&gt;<br />
   </code></pre>
   {{ end }}
 {{ end }}
