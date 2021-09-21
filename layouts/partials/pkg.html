@@ -1,3 +1,4 @@
 {{- $pkg := urls.Parse (.Permalink) }}
 {{- $pkgURL := printf "%s%s" $pkg.Hostname $pkg.RequestURI }}
+{{- $pkgURL := strings.TrimSuffix "/" $pkgURL }}
 {{ return $pkgURL }}
