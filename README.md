@@ -35,6 +35,7 @@
   <a href="#prerequisites">Prerequisites</a> •
   <a href="#installation">Installation</a> •
   <a href="#configuration">Configuration</a> •
+  <a href="#usage">Usage</a> •
   <a href="#contributing">Contributing</a> •
   <a href="#donate">Donate</a> •
   <a href="#license">License</a>
@@ -139,7 +140,7 @@ Once configured, run or deploy your Hugo site as usual. When running locally, th
 As mentioned in the previous section, setting `redirect` to `false` in the `config.toml` allows you to inspect the generated code for each package.
 
 ### Publishing and Installing a Module
-> If you have setup a new DNS entry, please allow for some time to propagate all the changes. DNS changes can take up to 24 hours to be fully resolved. Tools like [DNS Checker][dns_checker_url] can elp you verify the propagation status.
+> If you have setup a new DNS entry, please allow for some time to propagate all the changes. DNS changes can take up to 24 hours to be fully resolved. Tools like [DNS Checker][dns_checker_url] can help you verify the propagation status.
 
 In order for the Go tools to use your vanity URL you should deploy your generated site to production first. Be sure `redirect` is set to `true` in the `config.toml`. Once your vanity site has been deployed to production, you can verify the status of a package by invoking `curl` from the command line.
 
@@ -153,6 +154,11 @@ If the deployment was successful, you can follow the regular steps to [publish a
     
 ```console
 $ GOPROXY=proxy.golang.org go list -m example.com/package@v0.1.0
+```
+
+Use the following command to install the package in your Go project.
+```console
+$ go get example.com/package@v0.1.0
 ```
 
 ## Contributing
