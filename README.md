@@ -131,11 +131,29 @@ tags: [package]
 ```
 
 ## Usage
+### Accessing the Landing Page
 Once configured, run or deploy your Hugo site as usual. When running locally, the landing page is available at `localhost:1313`. The URL `localhost:1313/package` will redirect to `github.com/owner/repo`. When deployed in production, the URLs will change to `example.com` and `example.com/package` respectively.
 
 > When running locally, `hugo server -b http://example.com` replaces `localhost:1313` with `example.com`. This allows you to visually verify the rendering of the pages. This may lead to server binding errors though.
 
 As mentioned in the previous section, setting `redirect` to `false` in the `config.toml` allows you to inspect the generated code for each package.
+
+### Publishing and Installing a Module
+> If you have setup a new DNS entry, please allow for some time to propagate all the changes. DNS changes can take up to 24 hours to be fully resolved. Tools like [DNS Checker][dns_checker_url] can elp you verify the propagation status.
+
+In order for the Go tools to use your vanity URL you should deploy your generated site to production first. Be sure `redirect` is set to `true` in the `config.toml`. Once your vanity site has been deployed to production, you can verify the status of a package by invoking `curl` from the command line.
+
+```console
+$ curl https://example.com/package
+```
+    
+The response should include valid meta tags for `go-import` and `go-source`. Additionally, the `head` should include a `refresh` directive redirecting page visitors to the correct repository.
+
+If the deployment was successful, you can follow the regular steps to [publish a Go module][publish_go_module]. In particular, the last step should return a valid response for your package and tagged version:
+    
+```console
+$ GOPROXY=proxy.golang.org go list -m example.com/package@v0.1.0
+```
 
 ## Contributing
 1. Clone the repository and create a new branch 
@@ -168,7 +186,10 @@ The `hugo-theme-vanity` codebase is released under the [MIT license][license]. T
 [golang_download]: https://golang.org/dl/
 [golang_remote_path]: https://golang.org/cmd/go/#hdr-Remote_import_paths
 [uber_go_url]: http://go.uber.org
+[dns_checker_url]: https://dnschecker.org
+[publish_go_module]: https://golang.org/doc/modules/publishing
 
+    
 <!-- MARKDOWN MAINTAINED LINKS -->
 <!-- TODO: add blog link
 [blog]: https://markdumay.com
