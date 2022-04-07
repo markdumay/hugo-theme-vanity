@@ -164,7 +164,7 @@ $ go get example.com/package@v0.1.0
 ## Contributing
 1. Clone the repository and create a new branch 
     ```console
-    $ git checkout https://github.com/markdumay/shelldoc.git -b name_for_new_branch
+    $ git checkout https://github.com/markdumay/hugo-theme-vanity.git -b name_for_new_branch
     ```
 2. Make and test the changes
 3. Submit a Pull Request with a comprehensive description of the changes
