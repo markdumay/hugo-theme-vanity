@@ -2,3 +2,38 @@
   base = "exampleSite/"
   publish = "public/"
   command = "cp -r /opt/build/repo /opt/build/hugo-theme-vanity && hugo"
+
+  [[headers]]
+    for = "/*"
+    [headers.values]
+        Strict-Transport-Security = "max-age=31536000; includeSubDomains; preload"
+        X-Content-Type-Options = "nosniff"
+        X-XSS-Protection = "1; mode=block"
+        Content-Security-Policy = """\
+            default-src 'self'; \
+            script-src 'self'; \
+            style-src 'self'; \
+            object-src 'none'; \
+            base-uri 'self'; \
+            connect-src 'self' localhost:1313 ws://localhost:1313/livereload; \
+            font-src 'self'  \
+            frame-src 'self' localhost:1313; \
+            img-src 'self' https://img.shields.io; \
+            manifest-src 'self'; \
+            media-src 'self' \
+            """
+        X-Frame-Options = "SAMEORIGIN"
+        Referrer-Policy = "strict-origin"
+        Permissions-Policy = """\
+            geolocation=(), \
+            midi=(), \
+            sync-xhr=(), \
+            microphone=(), \
+            camera=(), \
+            magnetometer=(), \
+            gyroscope=(), \
+            fullscreen=(), \
+            payment=() \
+            """
+        Cache-Control = "public, max-age=31536000"
+        Access-Control-Allow-Origin = "*"
